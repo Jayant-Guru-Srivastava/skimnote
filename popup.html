@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SkimNote</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        width: 320px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 0;
+        overflow: hidden;
+      }
+      
+      .container {
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        color: #2d3748;
+        border-radius: 0;
+      }
+      
+      .header {
+        text-align: center;
+        margin-bottom: 24px;
+      }
+      
+      .logo {
+        font-size: 24px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 4px;
+      }
+      
+      .subtitle {
+        font-size: 12px;
+        color: #718096;
+        font-weight: 500;
+      }
+      
+      .button-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+        background: white;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-size: 14px;
+        font-weight: 500;
+        color: #4a5568;
+      }
+      
+      .btn:hover {
+        border-color: #667eea;
+        background: #f7fafc;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+      }
+      
+      .btn:active {
+        transform: translateY(0);
+      }
+      
+      .btn-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+        opacity: 0.7;
+      }
+      
+      .btn-text {
+        flex: 1;
+        text-align: left;
+      }
+      
+      .kbd {
+        background: #edf2f7;
+        border: 1px solid #cbd5e0;
+        border-radius: 6px;
+        padding: 4px 8px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #4a5568;
+        font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+      }
+      
+      .tip {
+        background: #f0fff4;
+        border: 1px solid #9ae6b4;
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 12px;
+        line-height: 1.4;
+        color: #2f855a;
+        text-align: center;
+      }
+      
+      .tip-icon {
+        display: inline-block;
+        margin-right: 6px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">SkimNote</div>
+        <div class="subtitle">Highlight & Annotate</div>
+      </div>
+      
+      <div class="button-group">
+        <button id="sidebar" class="btn">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/>
+          </svg>
+          <span class="btn-text">Toggle Sidebar</span>
+          <span class="kbd" id="sidebar-kbd">Alt+S</span>
+        </button>
+        
+        <button id="annotate" class="btn">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+          </svg>
+          <span class="btn-text">Annotate Mode</span>
+          <span class="kbd" id="annotate-kbd">Alt+E</span>
+        </button>
+        
+        <button id="quicknote" class="btn">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+          </svg>
+          <span class="btn-text">Quick Note</span>
+          <span class="kbd" id="quicknote-kbd">Alt+N</span>
+        </button>
+      </div>
+      
+      <div class="tip">
+        <span class="tip-icon">💡</span>
+        Use <span class="kbd" id="highlight-kbd">Alt+H</span> on selected text to save a highlight.
+      </div>
+    </div>
+    
+    <script src="popup.js"></script>
+  </body>
+</html>
+
+
