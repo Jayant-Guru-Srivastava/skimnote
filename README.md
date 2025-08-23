@@ -4,6 +4,7 @@ A minimal working scaffold for the SkimNote Chrome extension. Select text and us
 
 Load unpacked
 
+
 1. Open chrome://extensions
 2. Enable Developer mode
 3. Click "Load unpacked" and select this folder
